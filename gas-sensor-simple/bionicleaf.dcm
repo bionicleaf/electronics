@@ -6,4 +6,38 @@ K not inv
 F http://www.ti.com/lit/ds/symlink/sn7407.pdf
 $ENDCMP
 #
+$CMP BME280
+D Temperature, pressure, relative humidity
+K sensor temperature pressure humidity
+F ../datasheets/BME280_Breakout_v10.pdf
+$ENDCMP
+#
+$CMP DFRobotCO2
+D CO2 electrochemical sensor
+K sensor
+F http://image.dfrobot.com/image/data/SEN0159/CO2%20Sensor%20V1%20SCH.pdf
+$ENDCMP
+#
+$CMP LinkSpriteO2
+D LinkSprite O2 sensor
+K sensor
+F ../datasheets/LinkerSprite_O2_Schematic.pdf
+$ENDCMP
+#
+$CMP MQxModule
+F ../datasheets/MQx module schematic.gif
+$ENDCMP
+#
+$CMP MV5x3x
+D Red-Green LED
+K LED
+F https://media.digikey.com/pdf/Data%20Sheets/Everlight%20PDFs/MV5x33,38,37,39.pdf
+$ENDCMP
+#
+$CMP ads1x15
+D 12- (ads1015) or 16-bit (ads1115) 4-channel ADC 
+K ADC
+F ../datasheets/ads1x15 module schematic.jpg
+$ENDCMP
+#
 #End Doc Library

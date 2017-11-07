@@ -1,0 +1,48 @@
+
+
+MQ Gas sensors
+https://playground.arduino.cc/Main/MQGasSensors
+
+DIGI-KEY ELECTRONICS GAS SENSORS
+https://www.digikey.com/products/en/sensors-transducers/gas-sensors/530
+
+H2 sensor
+https://www.digikey.com/product-detail/en/MIKROE-1629/1471-1357-ND/4976480?WT.mc_id=IQ_7595_G_pla4976480&wt.srch=1&wt.medium=cpc&WT.srch=1&gclid=CjwKCAjw87PNBRBAEiwA0XAIr61GVcb4XSYqGLm3El7yyU51r1SDK9O__6gCHngDhVzvFfx-mfSDcBoCSBEQAvD_BwE
+
+Keywish Basic Gas Sensor MQ-2 MQ-3 MQ-4 MQ-5 MQ-6 MQ-7 MQ-8 MQ-9 MQ-135 Sensor kit set for Arduino Starter Kit gas detection 
+
+https://www.amazon.com/Keywish-Sensor-Arduino-Starter-detection/dp/B01N1UB89A/ref=pd_day0_60_4?_encoding=UTF8&pd_rd_i=B01N1UB89A&pd_rd_r=VY0P022MGE5510VP6VAD&pd_rd_w=kWXlL&pd_rd_wg=pA4C4&psc=1&refRID=VY0P022MGE5510VP6VAD
+
+MQ-2 = LPG, i-butane, propane, methane ,alcohol, hydrogen and smoke
+MQ-3 = ethanol
+MQ-4 = Methane [CH4
+MQ-5 = H2, LPG, CH4, CO, Alcohol. ...
+MQ-6 = LPG, iso-butane, propane, LNG, avoid the noise of alcohol and cooking fumes and cigarette smoke
+MQ-7 = CO (Carbon Monoxide)
+MQ-8 = H2
+MQ-9 = LPG, CO, CH4
+MQ135 = NH3, NOx, alcohol, benzene, smoke and CO2
+
+$29.99 PRIME
+
+Oxygen (O2) Sensor Module of Linker Kit for pcDuino/Arduino
+https://www.amazon.com/Oxygen-Sensor-Module-pcDuino-Arduino/dp/B019RMHD4W
+http://store.linksprite.com/oxygen-o2-sensor-module-of-linker-kit-for-pcduino-arduino/
+http://linksprite.com/wiki/index.php5?title=Oxygen_Sensor
+
+inker Oxygen sensor module uses ME series O2 sensor, and have low consumption , small size, high sensitivity , wide range of linearity , and better anti-jamming capacity, good reproducibility, stability and reliability ect advantage .
+It is electrochemical sensor widely suits for mine, industry and environmental protection field ect. 
+
+$49.99 PRIME
+
+DFRobot Gravity: Analog CO2 Gas Sensor for Arduino 
+https://www.amazon.com/DFRobot-Gravity-Analog-Sensor-Arduino/dp/B00R5CCH7U/ref=sr_1_1?ie=UTF8&qid=1510002687&sr=8-1&keywords=dfrobot+co2+sensor&dpID=41kijXlMVsL&preST=_SX300_QL70_&dpSrc=srch
+https://www.dfrobot.com/wiki/index.php/CO2_Sensor_SKU:SEN0159
+
+This arduino Co2 gas sensor has MG-811 sensor module which is highly sensitive to CO2 and less sensitive to alcohol and CO, low humidity & temperature dependency
+Onboard heating circuit brings the best temperature for sensor to function. Internal power boosting to 6V for heating sensor best performance
+It can be used in air quality control; ferment process control; room temperature Co2 concentration detection
+This is an electrochemical CO2 sensor, it is suitable for qualitative analysis
+Its detect range is 400 to 10000 ppm 
+
+$58.55 PRIME
