@@ -12,6 +12,12 @@ K sensor temperature pressure humidity
 F ../datasheets/BME280_Breakout_v10.pdf
 $ENDCMP
 #
+$CMP ComAnode
+D Red-Green LED
+K LED
+F https://media.digikey.com/pdf/Data%20Sheets/Everlight%20PDFs/MV5x33,38,37,39.pdf
+$ENDCMP
+#
 $CMP DFRobotCO2
 D CO2 electrochemical sensor
 K sensor
