@@ -40,7 +40,7 @@
     (select_parameter
       visible
       (bounds
-        0 0 208 494
+        9 47 208 494
       )
     )
     (route_parameter
