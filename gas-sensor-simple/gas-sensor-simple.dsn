@@ -1,4 +1,4 @@
-(pcb "F:\pauls\bionicleaf\gas-sensor-simple\gas-sensor-simple.dsn"
+(pcb "F:\pauls\bionicleaf\gas-sensor-simple\layout.dsn"
   (parser
     (string_quote ")
     (space_in_quoted_tokens on)
@@ -21,7 +21,8 @@
       )
     )
     (boundary
-      (rect pcb 156151 -47231 251912 -149729)
+      (path pcb 0  252730 -50800  156210 -50800  156210 -151130  204470 -151130
+            252730 -151130  252730 -50800  252730 -50800)
     )
     (via "Via[0-1]_889:635_um")
     (rule
@@ -33,28 +34,28 @@
   )
   (placement
     (component Pin_Headers:Pin_Header_Straight_2x05_Pitch2.54mm
-      (place J3 223520 -53340 back 90 (PN "digital header"))
-      (place J1 158750 -73660 front 0 (PN RPi))
+      (place J3 218440 -53340 back 90 (PN "digital header"))
+      (place J1 195580 -53340 front 270 (PN RPi))
     )
     (component Capacitors_THT:CP_Radial_D5.0mm_P2.00mm
-      (place C1 160020 -66040 front 270 (PN 1uF))
-      (place C2 166370 -74200 front 270 (PN 1uF))
-      (place C5 162560 -53880 front 270 (PN 1uF))
-      (place C8 176530 -102140 front 270 (PN 1uF))
+      (place C1 190500 -60230 front 270 (PN 1uF))
+      (place C2 200660 -60230 front 270 (PN 1uF))
+      (place C5 160020 -53880 front 270 (PN 1uF))
+      (place C8 179070 -69120 front 270 (PN 1uF))
       (place C10 209550 -122460 front 270 (PN 1uF))
       (place C12 209550 -76740 front 270 (PN 1uF))
-      (place C14 213360 -53880 front 270 (PN 1uF))
-      (place C16 184150 -66580 front 270 (PN 1uF))
+      (place C14 208280 -53880 front 270 (PN 1uF))
+      (place C16 160020 -69120 front 270 (PN 1uF))
     )
     (component Capacitors_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm
-      (place C3 167640 -67310 front 180 (PN 0.1uF))
-      (place C4 167640 -81280 front 180 (PN 0.1uF))
-      (place C6 167640 -55840 front 90 (PN 0.1uF))
-      (place C9 181650 -104140 front 0 (PN 0.1uF))
+      (place C3 195580 -62230 front 90 (PN 0.1uF))
+      (place C4 200660 -55840 front 90 (PN 0.1uF))
+      (place C6 165100 -55880 front 90 (PN 0.1uF))
+      (place C9 184150 -71120 front 90 (PN 0.1uF))
       (place C11 208320 -128270 front 0 (PN 0.1uF))
       (place C13 208320 -82550 front 0 (PN 0.1uF))
-      (place C15 218440 -55840 front 90 (PN 0.1uF))
-      (place C17 182920 -72390 front 0 (PN 0.1uF))
+      (place C15 213360 -55840 front 90 (PN 0.1uF))
+      (place C17 165100 -71120 front 90 (PN 0.1uF))
     )
     (component Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm
       (place J4 209550 -66040 front 0 (PN 1x2))
@@ -63,14 +64,14 @@
       (place J7 209550 -111760 front 0 (PN 1x2))
     )
     (component Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
-      (place R9 168910 -88900 front 180 (PN 4.7k))
-      (place R10 168910 -92710 front 180 (PN 4.7k))
+      (place R9 170180 -90170 front 90 (PN 4.7k))
+      (place R10 191770 -90170 front 90 (PN 4.7k))
     )
     (component Resistors_THT:R_Array_SIP5
-      (place RN1 184150 -85090 front 270 (PN 4x100K))
+      (place RN1 176530 -105410 front 180 (PN 4x100K))
     )
     (component "Potentiometers:Potentiometer_Trimmer_Piher_PT-10h5_Vertical_Px5.0mm_Py5.0mm"
-      (place RV1 238760 -139700 front 0 (PN 10K))
+      (place RV1 240030 -139780 front 0 (PN 10K))
     )
     (component Socket_Strips:Socket_Strip_Straight_1x04_Pitch2.54mm
       (place U1 214630 -66040 front 0 (PN "MQ-8"))
@@ -80,32 +81,37 @@
     )
     (component "Housings_DIP:DIP-14_W7.62mm"
       (place U5 226060 -77470 front 0 (PN 7407))
-      (place U6 226060 -115570 front 0 (PN 7407))
+      (place U6 226060 -102870 front 0 (PN 7407))
     )
     (component Socket_Strips:Socket_Strip_Straight_1x03_Pitch2.54mm
-      (place U8 248920 -99060 front 180 (PN "RG LED"))
-      (place U9 248920 -119380 front 180 (PN "RG LED"))
-      (place U10 248920 -142240 front 180 (PN "RG LED"))
+      (place U8 248920 -96520 front 180 (PN "RG LED"))
+      (place U9 248920 -111760 front 180 (PN "RG LED"))
+      (place U10 248920 -127000 front 180 (PN "RG LED"))
     )
     (component "Housings_DIP:DIP-8_W7.62mm"
       (place U12 226060 -138430 front 0 (PN LM393))
     )
     (component Socket_Strips:Socket_Strip_Straight_1x10_Pitch2.54mm
-      (place U13 177800 -72390 front 0 (PN ads1x15))
-      (place U14 177800 -109220 front 0 (PN ads1x15))
+      (place U13 162560 -77470 front 0 (PN ads1x15))
+      (place U14 184150 -77470 front 0 (PN ads1x15))
     )
     (component "Housings_DIP:DIP-12_W10.16mm"
-      (place U15 157480 -100330 front 0 (PN BME280))
+      (place U15 199390 -105410 front 270 (PN BME280))
     )
     (component Socket_Strips:Socket_Strip_Straight_2x05_Pitch2.54mm
-      (place J2 172720 -53340 front 90 (PN "digital header"))
+      (place J2 170180 -53340 front 90 (PN "digital header"))
     )
     (component Resistors_THT:R_Array_SIP8
       (place RN2 240030 -76200 front 270 (PN 4x150))
-      (place RN3 240030 -113030 front 270 (PN 4x180))
+      (place RN3 240030 -101600 front 270 (PN 4x150))
     )
     (component Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm
       (place U7 248920 -81280 front 180 (PN "RG LED"))
+    )
+    (component Pin_Headers:Pin_Header_Straight_2x04_Pitch2.54mm
+      (place . 226060 -124460 front 0 (PN .))
+      (place .. 231140 -124460 front 0 (PN .))
+      (place ... 236220 -124460 front 0 (PN ,))
     )
   )
   (library
@@ -592,6 +598,33 @@
       (pin Rect[A]Pad_1700x1700_um 1 0 0)
       (pin Oval[A]Pad_1700x1700_um 2 0 -2540)
       (pin Oval[A]Pad_1700x1700_um 3 0 -5080)
+    )
+    (image Pin_Headers:Pin_Header_Straight_2x04_Pitch2.54mm
+      (outline (path signal 100  0 1270  3810 1270))
+      (outline (path signal 100  3810 1270  3810 -8890))
+      (outline (path signal 100  3810 -8890  -1270 -8890))
+      (outline (path signal 100  -1270 -8890  -1270 0))
+      (outline (path signal 100  -1270 0  0 1270))
+      (outline (path signal 120  -1330 -8950  3870 -8950))
+      (outline (path signal 120  -1330 -1270  -1330 -8950))
+      (outline (path signal 120  3870 1330  3870 -8950))
+      (outline (path signal 120  -1330 -1270  1270 -1270))
+      (outline (path signal 120  1270 -1270  1270 1330))
+      (outline (path signal 120  1270 1330  3870 1330))
+      (outline (path signal 120  -1330 0  -1330 1330))
+      (outline (path signal 120  -1330 1330  0 1330))
+      (outline (path signal 50  -1800 1800  -1800 -9400))
+      (outline (path signal 50  -1800 -9400  4350 -9400))
+      (outline (path signal 50  4350 -9400  4350 1800))
+      (outline (path signal 50  4350 1800  -1800 1800))
+      (pin Rect[A]Pad_1700x1700_um 1 0 0)
+      (pin Oval[A]Pad_1700x1700_um 2 2540 0)
+      (pin Oval[A]Pad_1700x1700_um 3 0 -2540)
+      (pin Oval[A]Pad_1700x1700_um 4 2540 -2540)
+      (pin Oval[A]Pad_1700x1700_um 5 0 -5080)
+      (pin Oval[A]Pad_1700x1700_um 6 2540 -5080)
+      (pin Oval[A]Pad_1700x1700_um 7 0 -7620)
+      (pin Oval[A]Pad_1700x1700_um 8 2540 -7620)
     )
     (padstack Round[A]Pad_1600_um
       (shape (circle F.Cu 1600))
