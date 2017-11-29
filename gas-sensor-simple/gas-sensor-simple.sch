@@ -436,7 +436,7 @@ L DFRobotCO2 U3
 U 1 1 5A056713
 P 9500 3600
 F 0 "U3" H 9500 3850 60  0000 C CNN
-F 1 "DFRobotCO2" H 9500 3300 60  0000 C CNN
+F 1 "CO2" H 9500 3300 60  0000 C CNN
 F 2 "Socket_Strips:Socket_Strip_Straight_1x04_Pitch2.54mm" H 9500 3300 60  0001 C CNN
 F 3 "" H 9500 3300 60  0001 C CNN
 	1    9500 3600
@@ -456,23 +456,23 @@ $EndComp
 $Comp
 L GND #PWR015
 U 1 1 5A065453
-P 3600 2650
-F 0 "#PWR015" H 3600 2400 50  0001 C CNN
-F 1 "GND" H 3600 2500 50  0000 C CNN
-F 2 "" H 3600 2650 50  0001 C CNN
-F 3 "" H 3600 2650 50  0001 C CNN
-	1    3600 2650
+P 3600 3050
+F 0 "#PWR015" H 3600 2800 50  0001 C CNN
+F 1 "GND" H 3600 2900 50  0000 C CNN
+F 2 "" H 3600 3050 50  0001 C CNN
+F 3 "" H 3600 3050 50  0001 C CNN
+	1    3600 3050
 	1    0    0    -1  
 $EndComp
 $Comp
 L VCC #PWR016
 U 1 1 5A024ADB
-P 3300 1900
-F 0 "#PWR016" H 3300 1750 50  0001 C CNN
-F 1 "VCC" H 3300 2050 50  0000 C CNN
-F 2 "" H 3300 1900 50  0001 C CNN
-F 3 "" H 3300 1900 50  0001 C CNN
-	1    3300 1900
+P 3300 2300
+F 0 "#PWR016" H 3300 2150 50  0001 C CNN
+F 1 "VCC" H 3300 2450 50  0000 C CNN
+F 2 "" H 3300 2300 50  0001 C CNN
+F 3 "" H 3300 2300 50  0001 C CNN
+	1    3300 2300
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -596,23 +596,23 @@ $EndComp
 $Comp
 L CP1_Small C5
 U 1 1 5A0B3058
-P 3450 2300
-F 0 "C5" V 3550 2200 50  0000 L CNN
-F 1 "1uF" V 3350 2250 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.00mm" H 3450 2300 50  0001 C CNN
-F 3 "" H 3450 2300 50  0001 C CNN
-	1    3450 2300
+P 3450 2700
+F 0 "C5" V 3550 2600 50  0000 L CNN
+F 1 "1uF" V 3350 2650 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.00mm" H 3450 2700 50  0001 C CNN
+F 3 "" H 3450 2700 50  0001 C CNN
+	1    3450 2700
 	0    -1   -1   0   
 $EndComp
 $Comp
 L C_Small C6
 U 1 1 5A0B305E
-P 3450 2000
-F 0 "C6" V 3350 2000 50  0000 L CNN
-F 1 "0.1uF" V 3550 1900 50  0000 L CNN
-F 2 "Capacitors_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 3450 2000 50  0001 C CNN
-F 3 "" H 3450 2000 50  0001 C CNN
-	1    3450 2000
+P 3450 2400
+F 0 "C6" V 3350 2400 50  0000 L CNN
+F 1 "0.1uF" V 3550 2300 50  0000 L CNN
+F 2 "Capacitors_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm" H 3450 2400 50  0001 C CNN
+F 3 "" H 3450 2400 50  0001 C CNN
+	1    3450 2400
 	0    1    1    0   
 $EndComp
 $Comp
@@ -938,10 +938,8 @@ Wire Wire Line
 	8950 800  4250 800 
 Wire Wire Line
 	9000 750  4200 750 
-Wire Wire Line
-	3300 1900 3300 3550
-Connection ~ 3300 2300
-Connection ~ 3300 2000
+Connection ~ 3300 2700
+Connection ~ 3300 2400
 Wire Wire Line
 	4500 1400 4500 2100
 Wire Wire Line
@@ -1023,12 +1021,12 @@ Wire Wire Line
 Wire Wire Line
 	3850 3550 3900 3550
 Wire Wire Line
-	3550 2000 3600 2000
+	3550 2400 3600 2400
 Wire Wire Line
-	3600 2000 3600 2650
+	3600 2400 3600 3050
 Wire Wire Line
-	3550 2300 3900 2300
-Connection ~ 3600 2300
+	3550 2700 3950 2700
+Connection ~ 3600 2700
 Wire Wire Line
 	2750 4900 2800 4900
 Connection ~ 2800 4900
@@ -1124,8 +1122,6 @@ Wire Wire Line
 Connection ~ 750  2550
 Wire Wire Line
 	1050 2150 1200 2150
-Wire Wire Line
-	3900 2300 3900 3550
 Wire Wire Line
 	1650 3950 1900 3950
 Wire Wire Line
@@ -1235,7 +1231,7 @@ F 3 "" H 9300 2000 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Text Notes 9350 2100 0    50   ~ 0
-100K Thermistor\nSocket
+100K Thermistor\npin header
 Wire Wire Line
 	8950 3050 9100 3050
 Wire Wire Line
@@ -1252,7 +1248,7 @@ F 3 "" H 9300 3050 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Text Notes 9350 3150 0    50   ~ 0
-100K Thermistor\nSocket
+100K Thermistor\npin header
 Wire Wire Line
 	8950 3150 8950 3250
 Wire Wire Line
@@ -1270,7 +1266,7 @@ F 3 "" H 9250 4100 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Text Notes 9300 4200 0    50   ~ 0
-100K Thermistor\nSocket
+100K Thermistor\npin header
 Wire Wire Line
 	9050 4200 8900 4200
 Wire Wire Line
@@ -1294,7 +1290,7 @@ F 3 "" H 9250 6200 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Text Notes 9300 6350 0    50   ~ 0
-100K Thermistor\nSocket
+100K Thermistor\npin header
 Wire Wire Line
 	8850 6450 9950 6450
 Wire Wire Line
@@ -1315,9 +1311,9 @@ F 3 "" H 2550 2850 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	3350 2000 3300 2000
+	3350 2400 3300 2400
 Wire Wire Line
-	3300 2300 3350 2300
+	3300 2700 3350 2700
 Wire Wire Line
 	2750 3050 2850 3050
 Wire Wire Line
@@ -1372,7 +1368,7 @@ L R_Pack04_SIP RN3
 U 1 1 5A0B4DBB
 P 5950 4300
 F 0 "RN3" V 5350 4350 50  0000 C CNN
-F 1 "4x180" V 6550 4350 50  0000 C CNN
+F 1 "4x150" V 6550 4350 50  0000 C CNN
 F 2 "Resistors_THT:R_Array_SIP8" V 6625 4300 50  0001 C CNN
 F 3 "" H 5950 4300 50  0001 C CNN
 	1    5950 4300
@@ -1549,4 +1545,35 @@ Wire Wire Line
 NoConn ~ 5400 7100
 Wire Wire Line
 	3900 5250 3900 3950
+Wire Wire Line
+	3900 3550 3900 2700
+$Comp
+L GNDD #PWR027
+U 1 1 5A1E376D
+P 4400 3050
+F 0 "#PWR027" H 4400 2800 50  0001 C CNN
+F 1 "GNDD" H 4400 2925 50  0000 C CNN
+F 2 "" H 4400 3050 50  0001 C CNN
+F 3 "" H 4400 3050 50  0001 C CNN
+	1    4400 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 2700 4400 3050
+Connection ~ 3900 2700
+Wire Wire Line
+	4350 2700 4400 2700
+$Comp
+L pavillion JP1
+U 1 1 5A1F1560
+P 4150 2700
+F 0 "JP1" H 4150 2800 50  0000 C CNN
+F 1 "." H 4150 2800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0402_NoSilk" H 4150 2700 150 0001 C CNN
+F 3 "" H 4150 2700 150 0001 C CNN
+	1    4150 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 2300 3300 3550
 $EndSCHEMATC

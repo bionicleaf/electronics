@@ -164,4 +164,17 @@ X AN3 10 450 -150 200 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
+# pavillion
+#
+DEF pavillion JP 0 40 Y Y 1 F N
+F0 "JP" 0 100 50 H V C CNN
+F1 "pavillion" 0 -100 50 H V C CNN
+F2 "" 0 0 150 H I C CNN
+F3 "" 0 0 150 H I C CNN
+DRAW
+X ~ 1 -200 0 200 R 50 50 1 1 B
+X ~ 2 200 0 200 L 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
 #End Library
