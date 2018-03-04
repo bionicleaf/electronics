@@ -37,9 +37,6 @@
     <Compile Include="main.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="win32tests.py">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
