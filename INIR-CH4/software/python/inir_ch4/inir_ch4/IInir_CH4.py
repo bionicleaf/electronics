@@ -7,7 +7,7 @@ import InirCH4_Errors
 class OS_RS232:
     def __init__(self, port, baud):
         if platform.win32_ver()[0].isdigit():
-            self.TTY = serial.Serial('COM' + str(port), 
+            self.TTY = serial.Serial(port, 
                                      baud, 
                                      bytesize=serial.EIGHTBITS, 
                                      parity=serial.PARITY_NONE, 
@@ -28,13 +28,13 @@ class InirCH4:
         # get the serial port
         try:
             self._tty = OS_RS232(port, baud).TTY
-            if not self._tty.isOpen:
+            if self._tty.closed:
                 self._tty.open()
         except Exception, ex0:
             raise IOError('Failed to open serial port (' + str(port) + ') with Exception: ' + repr(ex0))
 
     def __del__(self):
-        if hasattr(self, '_tty') and self._tty is not None and self._tty.isOpen():
+        if hasattr(self, '_tty') and self._tty is not None and not self._tty.closed:
             self._tty.close()
         print '~InirCH4() called'
 

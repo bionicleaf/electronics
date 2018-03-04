@@ -6,6 +6,7 @@ import sys
 import IInir_CH4
 
 ch4 = None
+commport = 'COM7'
 
 # wrap print for debug echo
 def echo(cmd):
@@ -16,7 +17,7 @@ def connect(cmd, params):
     echo (cmd + ': ' + params)
 
     # create the sensor object
-    ch4 = IInir_CH4.InirCH4(50,38400)
+    ch4 = IInir_CH4.InirCH4(commport, 38400)
     # initialize it
     ch4.DoInitSequence()
 
