@@ -1,3 +1,5 @@
+import traceback 
+import argparse
 import signal
 import string
 import keyboard
@@ -6,7 +8,7 @@ import sys
 import IInir_CH4
 
 ch4 = None
-commport = 'COM7'
+commport = 'COM7'   #default is COM7 on Paul's laptop
 
 # wrap print for debug echo
 def echo(cmd):
@@ -59,8 +61,8 @@ def engineerMode (cmd, params):
     StartEscListener()
     while not EscPressed:
         data = ch4.Readtty()
-        if len(data) > 0:
-            print data
+        values = IInir_CH4.EngrData(data)
+        values.out()
 
 def configurationMode (cmd, params):
     global ch4, EscPressed
@@ -112,7 +114,8 @@ def parseLine(line):
             }[cmd](cmd, params)
 
         except Exception, ex:
-            echo (repr(ex))
+            traceback.print_exc(ex)
+            #echo (repr(ex))
 
     except Exception, ex:
         echo (ex.message)
@@ -155,12 +158,21 @@ def StartEscListener():
 # ----------------------------------
 # stop defining and start executing!
 # ----------------------------------
-try:
-    # hook control-C
-    signal.signal(signal.SIGINT, signal_handler)
+if __name__ == '__main__':
+    try:
+        ttt = IInir_CH4.EngrData("['0000005b\n\r00000000\n\raaaaaa1a\n\r00000be6\n\r00012c07\n\r000118a3\n\r00000454\n\rfffffbab\n\r0000005d\n\r']")
 
-    # run the program
-    cmdLoop()
+        argparser = argparse.ArgumentParser(description='control CH4 sensor connected to port')
+        argparser.add_argument('port', metavar='port', type=int, nargs=1, help='port number')
+        args = argparser.parse_args()
 
-except Exception, ex0:
-    print ('Exception thrown: ' + repr(ex0))
+        commport = args.port[0]
+
+        # hook control-C
+        signal.signal(signal.SIGINT, signal_handler)
+
+        # run the program
+        cmdLoop()
+
+    except Exception, ex0:
+        print ('Exception thrown: ' + repr(ex0))

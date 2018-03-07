@@ -1,13 +1,14 @@
 import platform
 import serial
 import time
+import re
 
 import InirCH4_Errors
 
 class OS_RS232:
     def __init__(self, port, baud):
         if platform.win32_ver()[0].isdigit():
-            self.TTY = serial.Serial(port, 
+            self.TTY = serial.Serial('COM' + str(port), 
                                      baud, 
                                      bytesize=serial.EIGHTBITS, 
                                      parity=serial.PARITY_NONE, 
@@ -49,7 +50,7 @@ class InirCH4:
 
     def Readtty(self):
         #self._tty.flushInput()
-        time.sleep(0.120)
+        time.sleep(1)
         response = []
         while True:
             size = self._tty.inWaiting()
@@ -121,4 +122,26 @@ class InirCH4:
     def Errors(self):
         # move this gore to another file
         return InirCH4_Errors.InirCH4_Errors
+
+
+class EngrData:
+    engrRegex = re.compile(r"(?P<lbkt>[0-9a-f]{8})\n\r(?P<ppm>[0-9a-f]{8})\n\r(?P<faults>[0-9a-f]{8})\n\r(?P<temp>[0-9a-f]{8})\n\r(?P<refavg>[0-9a-f]{8})\n\r(?P<actavg>[0-9a-f]{8})\n\r(?P<crc>[0-9a-f]{8})\n\r(?P<crc1>[0-9a-f]{8})\n\r(?P<rbkt>[0-9a-f]{8})\n\r")
+
+    def __init__(self, data):
+        # ['0000005b\n\r00000000\n\raaaaaa1a\n\r00000be6\n\r00012c07\n\r000118a3\n\r00000454\n\rfffffbab\n\r0000005d\n\r']
+        self.data = data
+        try:
+            if not self.data is None and len(self.data) > 0:
+                self.Values = EngrData.engrRegex.match(self.data[0])
+                self.PPM = int(self.Values.group('ppm'), 16)
+                self.Faults = self.Values.group('faults')
+                self.Temperature = int(self.Values.group('temp'), 16)
+        except Exception, ex:
+            pass
+
+    def out(self):
+        if hasattr(self, 'Values') and not self.Values is None:
+            print 'ppm=' + str(self.PPM) + '\tTemperature=' + str(float(self.Temperature/10))
+
+
 
