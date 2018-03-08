@@ -1,3 +1,4 @@
+import sys
 import platform
 import serial
 import time
@@ -141,7 +142,7 @@ class EngrData:
 
     def out(self):
         if hasattr(self, 'Values') and not self.Values is None:
-            print 'ppm=' + str(self.PPM) + '\tTemperature=' + str(float(self.Temperature/10))
+            sys.stdout.write ('\rppm=' + str(self.PPM) + '\t\tTemperature=' + str(float(self.Temperature/10)))
 
 
 
