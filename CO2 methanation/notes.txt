@@ -25,3 +25,66 @@ https://www.marcorubber.com/o-rings.htm
 
 PTFE coated o-rings with rubber core
 https://www.marcorubber.com/teflon-encapsulated-o-rings.htm
+
+!! Short-Path-Gas-Cells
+http://www.piketech.com/GS-Short-Path-Gas-Cells.html
+https://www.specac.com/en/products/ftir-acc/transmission/gas/short-pathlength-gas-cell
+http://www.reflexusa.com/rapkinac.html
+http://www.ftir.com/html/short_path_gas_cell.html
+http://www.reflexusa.com/cuvettes-uv-vis-nir.html
+http://www.durasens.com/yahoo_site_admin/assets/docs/GT-10SeriesDatasheet.65155737.pdf
+http://www.microptik.eu/product/ftir-gas-cells
+https://www.fireflysci.com/ftir-evacuable-dies-and-gas-cells/
+http://internationalcrystal.net/iclsite3/icl51.htm $355
+
+Varsal Lamps and Cells
+http://www.varsal.com/lampandcell.asp?cat=6&product=40
+406-334-I50	34-I-50	UV-VIS-NIR	Type 34 cylinder with w/stoppers	Quartz	50mm path	14.1ml	
+$150.00 for 34-I-50 UV-VIS-NIR cylinder with w/stoppers
+34 = two stoppers
+I = uv-vis-nir = Infrasil
+50mm path length :-(
+
+!!!! BEST DEAL :-)
+$85 Varsal Type 34-I-100 IR Quartz Cylindrical Two Stoppers Spectrophotometer Cell
+https://www.ebay.com/itm/Varsal-Type-34-I-100-IR-Quartz-Cylindrical-Two-Stoppers-Spectrophotometer-Cell-/152895798662?_trksid=p2349526.m4383.l4275.c10
+
+$133 100 mm path two stoppers VIS-NIR 335 nm to 2500 nm
+https://www.ebay.com/itm/Unico-Cylindrical-Glass-Cuvette/172236155308?hash=item281a1329ac:m:mLMYCMrb6BDkGrgS5fU870A
+http://www.unicosci.com/spectro/cuvettes.htm
+
+!!! Whitebear Photonics
+100 mm quartz w/ two stoppers & windows $225, 19mm ID, 22mm OD
+https://www.whitebearphotonics.com/spectrophotometer-cells-and-cuvettes/cylindrical-cells-long-path-length-34-series
+
+Ocean optics 
+https://oceanoptics.com/product/quartz-cuvettes/
+CV-Q-10	    Standard	        3.5 mL	12.5 x 12.5 x 45
+CV-Q-100	Cylindrical, w/long pathlength	
+                                28.2 mL	22 OD x 102.5  <-- rebranded whitebear?
+CVF-Q-10	Flow cell	        0.42 mL	12.5 x 12.5 x 35
+CVFL-Q-10	Fluorescence cell	3.5 mL	12.5 x 12.5 x 45
+CVS-Q-10	Self-masking	    1.4 mL	12.5 x 12.5 x 48
+
+
+Super thin HV wire insulation (mica+glass)
+
+
+eBay calibration gas
+lg canister 99.999% methane
+http://www.ebay.com/bhp/calibration-gas
+
+Generation of Cold Argon Plasma Jet at the End of Flexible Plastic Tube 
+https://arxiv.org/ftp/arxiv/papers/1411/1411.3976.pdf
+
+HV Supply for plasma basics
+https://www.amazing1.com/hv-hf-power-supplies.html
+https://www.amazing1.com/content/download/PVM500_INS.pdf
+https://www.amazing1.com/content/download/PVM500BASICSCHEMATIC.pdf
+https://www.amazing1.com/content/download/DUTYCYCLEWRITEUP.pdf
+
+Catalytic Carbon Dioxide Methanation
+https://academiccommons.columbia.edu/download/fedora_content/download/ac:188053/CONTENT/Duyar_columbia_0054D_12676.pdf
+Methane was the only hydrocarbon product observed during 
+CO2 hydrogenation. The activation energy was found to be 66.084 kJ/g-mole CH4. The empirical
+reaction order for H2 was 0.88 and for CO2 0.34. Product reaction orders were essentially zero.
