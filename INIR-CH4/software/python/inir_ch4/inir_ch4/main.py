@@ -6,6 +6,7 @@ import keyboard
 import sys
 
 import IInir_CH4
+import ZE03_H2
 
 ch4 = None
 commport = 'COM7'   #default is COM7 on Paul's laptop
@@ -160,8 +161,6 @@ def StartEscListener():
 # ----------------------------------
 if __name__ == '__main__':
     try:
-        ttt = IInir_CH4.EngrData("['0000005b\n\r00000000\n\raaaaaa1a\n\r00000be6\n\r00012c07\n\r000118a3\n\r00000454\n\rfffffbab\n\r0000005d\n\r']")
-
         argparser = argparse.ArgumentParser(description='control CH4 sensor connected to port')
         argparser.add_argument('port', metavar='port', type=int, nargs=1, help='port number')
         args = argparser.parse_args()
@@ -172,7 +171,15 @@ if __name__ == '__main__':
         signal.signal(signal.SIGINT, signal_handler)
 
         # run the program
-        cmdLoop()
+        # cmdLoop()
+
+        # ZE03-H2 sensor
+        h2 = ZE03_H2.ZE03_H2()
+        StartEscListener()
+        while not EscPressed:
+            data = h2.Readtty()
+            if len(data) > 0:
+                print h2.ParseResponse(data)
 
     except Exception, ex0:
         print ('Exception thrown: ' + repr(ex0))

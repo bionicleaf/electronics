@@ -86,5 +86,16 @@ https://www.amazing1.com/content/download/DUTYCYCLEWRITEUP.pdf
 Catalytic Carbon Dioxide Methanation
 https://academiccommons.columbia.edu/download/fedora_content/download/ac:188053/CONTENT/Duyar_columbia_0054D_12676.pdf
 Methane was the only hydrocarbon product observed during 
+
+comparative study on the kinetics of carbon dioxide methanation
+http://ijhfc.irost.ir/article_349_c2e5af5a1d58f1e5e7f12db36aa1a15d.pdf
+
 CO2 hydrogenation. The activation energy was found to be 66.084 kJ/g-mole CH4. The empirical
 reaction order for H2 was 0.88 and for CO2 0.34. Product reaction orders were essentially zero.
+
+Plasmas
+Collisions and cross sections
+http://www.springer.com/cda/content/document/cda_downloaddocument/9783540858485-c1.pdf?SGWID=0-0-45-714900-p173841610
+
+Quantum Molecular Dynamics of Partially Ionized Plasmas
+https://arxiv.org/pdf/physics/9701018.pdf

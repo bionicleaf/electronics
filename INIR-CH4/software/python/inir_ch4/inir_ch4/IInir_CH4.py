@@ -1,32 +1,17 @@
 import sys
-import platform
-import serial
 import time
 import re
 
 import InirCH4_Errors
-
-class OS_RS232:
-    def __init__(self, port, baud):
-        if platform.win32_ver()[0].isdigit():
-            self.TTY = serial.Serial('COM' + str(port), 
-                                     baud, 
-                                     bytesize=serial.EIGHTBITS, 
-                                     parity=serial.PARITY_NONE, 
-                                     stopbits=serial.STOPBITS_ONE, 
-                                     timeout=2)
-        else:
-            try:
-               self.TTY = serial.Serial('/dev/ttyS' + str(port), baud, timeout=2)
-            except:
-               self.TTY = serial.Serial('/dev/USB' + str(port), baud, timeout=2)
+import OS_RS232
 
 class InirCH4:
 
     # -----------------------------
     # construction / destruction
+    # defaults set for dev machine
     # -----------------------------
-    def __init__(self, port, baud=38400):
+    def __init__(self, port=49, baud=38400):
         # get the serial port
         try:
             self._tty = OS_RS232(port, baud).TTY
@@ -126,7 +111,8 @@ class InirCH4:
 
 
 class EngrData:
-    engrRegex = re.compile(r"(?P<lbkt>[0-9a-f]{8})\n\r(?P<ppm>[0-9a-f]{8})\n\r(?P<faults>[0-9a-f]{8})\n\r(?P<temp>[0-9a-f]{8})\n\r(?P<refavg>[0-9a-f]{8})\n\r(?P<actavg>[0-9a-f]{8})\n\r(?P<crc>[0-9a-f]{8})\n\r(?P<crc1>[0-9a-f]{8})\n\r(?P<rbkt>[0-9a-f]{8})\n\r")
+
+    engrRegex = re.compile(r"(?P<lbkt>[0-9a-f]{8})\n\r(?P<ppm>[0-9a-f]{8})\n\r(?P<faults>[0-9a-f]{8})\n\r(?P<temp>[0-9a-f]{8})\n\r(?P<refavg>[0-9a-f]{8})\n\r(?P<actavg>[0-9a-f]{8})\n\r(?P<crc>[0-9a-f]{8})\n\r(?P<crc1>[0-9a-f]{8})\n\r(?P<rbkt>[0-9a-f]{8})\n\r")
 
     def __init__(self, data):
         # ['0000005b\n\r00000000\n\raaaaaa1a\n\r00000be6\n\r00012c07\n\r000118a3\n\r00000454\n\rfffffbab\n\r0000005d\n\r']
