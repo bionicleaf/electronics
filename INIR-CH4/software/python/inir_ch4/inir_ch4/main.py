@@ -5,6 +5,7 @@ import string
 import keyboard
 import sys
 
+import datetime
 import IInir_CH4
 import ZE03
 import T6615
@@ -171,7 +172,7 @@ if __name__ == '__main__':
         # hook control-C
         signal.signal(signal.SIGINT, signal_handler)
 
-        sensor = 'T6615'
+        sensor = '' # 'T6615'
 
         # run the program
         if sensor == 'IInir_CH4':
@@ -198,5 +199,25 @@ if __name__ == '__main__':
                 val = co2.ParseRead(data)
                 print datastr + '\t' + str(val)
 
+        else:
+            co2 = T6615(port=49, baud=19200)
+            o2 = ZE03(port=50, baud=9600)
+            h2 = ZE03(port=51, baud=9600)
+            ch4 = IInir_CH4(port=49, baud=38400)
+
+            ch4.DoInitSequence()
+
+            StartEscListener()
+            while not EscPressed:
+                co2val = co2.Read()
+                o2val = o2.Read()
+                h2val = h2.Read()
+                ch4vals = EngrData(ch4.Readtty())
+
+                now = datetime.datetime.now()
+
+                print now + '\t' + co2val + '\t' + o2val + '\t' + h2val + '\t' + ch4vals.PPM
+
     except Exception, ex0:
         print ('Exception thrown: ' + repr(ex0))
+        
