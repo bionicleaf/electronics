@@ -6,7 +6,7 @@ import keyboard
 import sys
 
 import IInir_CH4
-import ZE03_H2
+import ZE03
 
 ch4 = None
 commport = 'COM7'   #default is COM7 on Paul's laptop
@@ -174,12 +174,13 @@ if __name__ == '__main__':
         # cmdLoop()
 
         # ZE03-H2 sensor
-        h2 = ZE03_H2.ZE03_H2()
+        h2 = ZE03.ZE03()
         StartEscListener()
         while not EscPressed:
             data = h2.Readtty()
-            if len(data) > 0:
-                print h2.ParseResponse(data)
+            val = h2.ParseResponse(data)
+            datastr = ' '.join(hex(ord(x))[2:] for x in data)
+            print datastr + '\t' + str(val)
 
     except Exception, ex0:
         print ('Exception thrown: ' + repr(ex0))

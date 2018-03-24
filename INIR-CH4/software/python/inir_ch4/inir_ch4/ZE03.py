@@ -2,8 +2,8 @@ import time
 import OS_RS232
 
 
-class ZE03_H2(object):
-    """serial interface to ZE03-H2 sensor"""
+class ZE03(object):
+    """serial interface to ZE03-xx sensors"""
     # -----------------------------
     # construction / destruction
     # defaults set for dev machine
@@ -20,7 +20,7 @@ class ZE03_H2(object):
     def __del__(self):
         if hasattr(self, '_tty') and self._tty is not None and not self._tty.closed:
             self._tty.close()
-        print '~ZE03_H2() called'
+        print '~ZE03() called'
 
     class Modes:
         Active, QA = range(2)
@@ -50,6 +50,10 @@ class ZE03_H2(object):
         # convert hex encoded values of chars 2 & 3 to reading
         return ord(data[2]) * 256 + ord(data[3])
 
+    def Read(self):
+        data = self.Readtty()
+        return self.ParseResponse(data)
+
     @staticmethod
     def BytearrayChecksum(data, length):
         jdx = 0
@@ -63,15 +67,15 @@ class ZE03_H2(object):
     @staticmethod
     def ChecksumTest():
         cmd = bytearray([0xFF, 0x01, 0x78, 0x03, 0x00, 0x00, 0x00, 0x00, 0x84])
-        chksum = ZE03_H2.BytearrayChecksum(cmd, len(cmd)-1)
+        chksum = ZE03.BytearrayChecksum(cmd, len(cmd)-1)
         if (chksum != 0x84):
             return 'Fail'
         cmd = bytearray([0xFF, 0x01, 0x78, 0x04, 0x00, 0x00, 0x00, 0x00, 0x83])
-        chksum = ZE03_H2.BytearrayChecksum(cmd, len(cmd)-1)
+        chksum = ZE03.BytearrayChecksum(cmd, len(cmd)-1)
         if (chksum != 0x83):
             return 'Fail'
         cmd = bytearray([0xFF, 0x01, 0x86, 0x00, 0x00, 0x00, 0x00, 0x00, 0x79])
-        chksum = ZE03_H2.BytearrayChecksum(cmd, len(cmd)-1)
+        chksum = ZE03.BytearrayChecksum(cmd, len(cmd)-1)
         if (chksum != 0x79):
             return 'Fail'
         
