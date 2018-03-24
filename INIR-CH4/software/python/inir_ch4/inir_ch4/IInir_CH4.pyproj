@@ -41,6 +41,9 @@
     <Compile Include="OS_RS232.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="T6615.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ZE03.py">
       <SubType>Code</SubType>
     </Compile>

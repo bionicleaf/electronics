@@ -7,6 +7,7 @@ import sys
 
 import IInir_CH4
 import ZE03
+import T6615
 
 ch4 = None
 commport = 'COM7'   #default is COM7 on Paul's laptop
@@ -170,17 +171,32 @@ if __name__ == '__main__':
         # hook control-C
         signal.signal(signal.SIGINT, signal_handler)
 
-        # run the program
-        # cmdLoop()
+        sensor = 'T6615'
 
-        # ZE03-H2 sensor
-        h2 = ZE03.ZE03()
-        StartEscListener()
-        while not EscPressed:
-            data = h2.Readtty()
-            val = h2.ParseResponse(data)
-            datastr = ' '.join(hex(ord(x))[2:] for x in data)
-            print datastr + '\t' + str(val)
+        # run the program
+        if sensor == 'IInir_CH4':
+            cmdLoop()
+
+        elif sensor == 'ZE03':
+            # ZE03-xx sensor
+            h2 = ZE03.ZE03()
+            StartEscListener()
+            while not EscPressed:
+                data = h2.Readtty()
+                val = h2.ParseResponse(data)
+                datastr = ' '.join(hex(ord(x))[2:] for x in data)
+                print datastr + '\t' + str(val)
+
+        elif sensor == 'T6615':
+            # T6615-CO2 sensor
+            co2 = T6615.T6615()
+            StartEscListener()
+            while not EscPressed:
+                co2.SendReadCommand()
+                data = co2.Readtty()
+                datastr = ' '.join(hex(ord(x))[2:] for x in data)
+                val = co2.ParseRead(data)
+                print datastr + '\t' + str(val)
 
     except Exception, ex0:
         print ('Exception thrown: ' + repr(ex0))
