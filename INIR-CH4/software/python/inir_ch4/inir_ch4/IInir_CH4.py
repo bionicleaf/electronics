@@ -3,7 +3,7 @@ import time
 import re
 
 import InirCH4_Errors
-import OS_RS232
+from OS_RS232 import OS_RS232
 
 class InirCH4:
 

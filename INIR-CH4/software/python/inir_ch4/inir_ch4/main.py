@@ -6,9 +6,10 @@ import keyboard
 import sys
 
 import datetime
-import IInir_CH4
-import ZE03
-import T6615
+from IInir_CH4 import InirCH4
+from IInir_CH4 import EngrData
+from ZE03 import ZE03
+from T6615 import T6615
 
 ch4 = None
 commport = 'COM7'   #default is COM7 on Paul's laptop
@@ -190,7 +191,7 @@ if __name__ == '__main__':
 
         elif sensor == 'T6615':
             # T6615-CO2 sensor
-            co2 = T6615.T6615()
+            co2 = T6615()
             StartEscListener()
             while not EscPressed:
                 co2.SendReadCommand()
@@ -200,23 +201,31 @@ if __name__ == '__main__':
                 print datastr + '\t' + str(val)
 
         else:
-            co2 = T6615(port=49, baud=19200)
-            o2 = ZE03(port=50, baud=9600)
-            h2 = ZE03(port=51, baud=9600)
-            ch4 = IInir_CH4(port=49, baud=38400)
+            try:
+                co2 = T6615(port=9, baud=19200)
+                o2 = ZE03(port=6, baud=9600)
+                h2 = ZE03(port=10, baud=9600)
+                ch4 = InirCH4(port=7, baud=38400)
 
-            ch4.DoInitSequence()
+                ch4.DoInitSequence()
 
-            StartEscListener()
-            while not EscPressed:
-                co2val = co2.Read()
-                o2val = o2.Read()
-                h2val = h2.Read()
-                ch4vals = EngrData(ch4.Readtty())
+                StartEscListener()
+                while not EscPressed:
+                    co2val = co2.Read()
+                    o2val = o2.Read()
+                    h2val = h2.Read()
+                    ch4vals = EngrData(ch4.Readtty())
+                    if hasattr(ch4vals, 'PPM'):
+                        ch4vals = ch4vals.PPM
+                    else:
+                        ch4vals = 0
 
-                now = datetime.datetime.now()
+                    now = datetime.datetime.now()
 
-                print now + '\t' + co2val + '\t' + o2val + '\t' + h2val + '\t' + ch4vals.PPM
+                    print str(now) + '\t' + str(co2val) + '\t' + str(o2val) + '\t' + str(h2val) + '\t' + str(ch4vals)
+
+            except Exception, ex1:
+                print ('Exception thrown: ' + repr(ex1))
 
     except Exception, ex0:
         print ('Exception thrown: ' + repr(ex0))

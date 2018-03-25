@@ -1,5 +1,5 @@
 import time
-import OS_RS232
+from OS_RS232 import OS_RS232
 
 class T6615(object):
     """serial interface to T6615 CO2 sensor"""
@@ -10,7 +10,7 @@ class T6615(object):
     def __init__(self, port=52, baud=19200):
         # get the serial port
         try:
-            self._tty = OS_RS232.OS_RS232(port, baud).TTY
+            self._tty = OS_RS232(port, baud).TTY
             if self._tty.closed:
                 self._tty.open()
         except Exception, ex0:

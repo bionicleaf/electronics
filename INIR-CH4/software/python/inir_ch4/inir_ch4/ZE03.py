@@ -1,6 +1,5 @@
 import time
-import OS_RS232
-
+from OS_RS232 import OS_RS232
 
 class ZE03(object):
     """serial interface to ZE03-xx sensors"""
@@ -11,7 +10,7 @@ class ZE03(object):
     def __init__(self, port=52, baud=9600):
         # get the serial port
         try:
-            self._tty = OS_RS232.OS_RS232(port, baud).TTY
+            self._tty = OS_RS232(port, baud).TTY
             if self._tty.closed:
                 self._tty.open()
         except Exception, ex0:
@@ -43,7 +42,7 @@ class ZE03(object):
 
     def ParseResponse(self, data):
         # check for valid data
-        if (len(data) != 9):
+        if (len(data) < 9):
             return ''
         if (data[0] != '\xff' or not (data[1] == '\x86' or data[1] == '\x78') ): 
             return ''
