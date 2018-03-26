@@ -1,0 +1,8 @@
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4_control\bin\Debug\inir_ch4_control.exe.config
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4_control\bin\Debug\inir_ch4_control.exe
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4_control\bin\Debug\inir_ch4_control.pdb
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4_control\bin\Debug\inir_ch4.dll
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4_control\bin\Debug\inir_ch4.pdb
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4_control\obj\Debug\inir_ch4_control.csprojResolveAssemblyReference.cache
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4_control\obj\Debug\inir_ch4_control.exe
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4_control\obj\Debug\inir_ch4_control.pdb

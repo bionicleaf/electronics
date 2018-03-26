@@ -1,0 +1,5 @@
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4\bin\Debug\inir_ch4.dll.config
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4\bin\Debug\inir_ch4.dll
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4\bin\Debug\inir_ch4.pdb
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4\obj\Debug\inir_ch4.dll
+F:\pauls\bionicleaf\INIR-CH4\software\INIR-CH4\inir_ch4\obj\Debug\inir_ch4.pdb
