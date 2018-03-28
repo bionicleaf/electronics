@@ -12,6 +12,25 @@ from IInir_CH4 import EngrData
 from ZE03 import ZE03
 from T6615 import T6615
 
+setup = 'lab'
+
+if setup == 'lab':
+    T6615_port=9
+    ZE03_O2_port=6
+    ZE03_H2_port=10
+    InirCH4_port=7
+elif setup == 'adidev':
+    T6615_port=9
+    ZE03_O2_port=6
+    ZE03_H2_port=10
+    InirCH4_port=7
+elif setup == 'pauldev':
+    T6615_port=9
+    ZE03_O2_port=6
+    ZE03_H2_port=10
+    InirCH4_port=7
+
+
 ch4 = None
 commport = 'COM7'   #default is COM7 on Paul's laptop
 log = None
@@ -204,6 +223,8 @@ if __name__ == '__main__':
                 print datastr + '\t' + str(val)
 
         else:
+            # global T6615_port, ZE03_O2_port, ZE03_H2_port, InirCH4_port
+
             try:
                 parser = argparse.ArgumentParser(description='control CH4 sensor connected to port')
                 parser.add_argument('--logfile', help='log file name')
@@ -221,10 +242,10 @@ if __name__ == '__main__':
                 logging.basicConfig(filename=logFile, level=logging.DEBUG)
                 logging.info('\r\n' + timestamp() + 'program start')
 
-                co2 = T6615(port=8, baud=19200)
-                o2 = ZE03(port=5, baud=9600)
-                h2 = ZE03(port=9, baud=9600)
-                ch4 = InirCH4(port=7, baud=38400)
+                co2 = T6615(port=T6615_port, baud=19200)
+                o2 = ZE03(port=ZE03_O2_port, baud=9600)
+                h2 = ZE03(port=ZE03_H2_port, baud=9600)
+                ch4 = InirCH4(port=InirCH4_port, baud=38400)
 
                 ch4.DoInitSequence()
 
