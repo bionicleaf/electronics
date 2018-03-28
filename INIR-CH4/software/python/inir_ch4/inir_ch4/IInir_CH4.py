@@ -11,7 +11,7 @@ class InirCH4:
     # construction / destruction
     # defaults set for dev machine
     # -----------------------------
-    def __init__(self, port=49, baud=38400):
+    def __init__(self, port=50, baud=38400):
         # get the serial port
         try:
             self._tty = OS_RS232(port, baud).TTY
@@ -128,7 +128,7 @@ class EngrData:
 
     def out(self):
         if hasattr(self, 'Values') and not self.Values is None:
-            sys.stdout.write ('\rppm=' + str(self.PPM) + '\t\tTemperature=' + str(float(self.Temperature/10)))
+            sys.stdout.write ('\r\nppm=' + str(self.PPM) + '\t\tTemperature=' + str(float(self.Temperature/10)))
 
 
 

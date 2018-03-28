@@ -5,6 +5,7 @@ import string
 import keyboard
 import sys
 
+import logging
 import datetime
 from IInir_CH4 import InirCH4
 from IInir_CH4 import EngrData
@@ -13,6 +14,11 @@ from T6615 import T6615
 
 ch4 = None
 commport = 'COM7'   #default is COM7 on Paul's laptop
+log = None
+
+def timestamp():
+    return str(datetime.datetime.now())
+
 
 # wrap print for debug echo
 def echo(cmd):
@@ -23,7 +29,7 @@ def connect(cmd, params):
     echo (cmd + ': ' + params)
 
     # create the sensor object
-    ch4 = IInir_CH4.InirCH4(commport, 38400)
+    ch4 = InirCH4(commport, 38400)
     # initialize it
     ch4.DoInitSequence()
 
@@ -65,7 +71,7 @@ def engineerMode (cmd, params):
     StartEscListener()
     while not EscPressed:
         data = ch4.Readtty()
-        values = IInir_CH4.EngrData(data)
+        values = EngrData(data)
         values.out()
 
 def configurationMode (cmd, params):
@@ -164,11 +170,7 @@ def StartEscListener():
 # ----------------------------------
 if __name__ == '__main__':
     try:
-        argparser = argparse.ArgumentParser(description='control CH4 sensor connected to port')
-        argparser.add_argument('port', metavar='port', type=int, nargs=1, help='port number')
-        args = argparser.parse_args()
-
-        commport = args.port[0]
+        # commport = args.port[0]
 
         # hook control-C
         signal.signal(signal.SIGINT, signal_handler)
@@ -177,6 +179,7 @@ if __name__ == '__main__':
 
         # run the program
         if sensor == 'IInir_CH4':
+            commport = 50
             cmdLoop()
 
         elif sensor == 'ZE03':
@@ -202,9 +205,25 @@ if __name__ == '__main__':
 
         else:
             try:
-                co2 = T6615(port=9, baud=19200)
-                o2 = ZE03(port=6, baud=9600)
-                h2 = ZE03(port=10, baud=9600)
+                parser = argparse.ArgumentParser(description='control CH4 sensor connected to port')
+                parser.add_argument('--logfile', help='log file name')
+                args = parser.parse_args()
+
+                logFile = args.logfile
+                if logFile == None:
+                    logFile = 'log'
+                
+                # logging.basicConfig(filename=logFile + '_' + timestamp() +'.log', level=logging.DEBUG)
+
+                logFile = timestamp() + '.log'
+                logFile = logFile.replace(':', '.')
+                print logFile
+                logging.basicConfig(filename=logFile, level=logging.DEBUG)
+                logging.info('\r\n' + timestamp() + 'program start')
+
+                co2 = T6615(port=8, baud=19200)
+                o2 = ZE03(port=5, baud=9600)
+                h2 = ZE03(port=9, baud=9600)
                 ch4 = InirCH4(port=7, baud=38400)
 
                 ch4.DoInitSequence()
@@ -220,9 +239,10 @@ if __name__ == '__main__':
                     else:
                         ch4vals = 0
 
-                    now = datetime.datetime.now()
+                    msg = timestamp() + '\t' + str(co2val) + '\t' + str(o2val) + '\t' + str(h2val) + '\t' + str(ch4vals)
+                    logging.debug(msg)
 
-                    print str(now) + '\t' + str(co2val) + '\t' + str(o2val) + '\t' + str(h2val) + '\t' + str(ch4vals)
+                    print msg+'\r\n'
 
             except Exception, ex1:
                 print ('Exception thrown: ' + repr(ex1))
